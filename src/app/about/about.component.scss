@@ -1,0 +1,55 @@
+.about-me {
+  margin-left: 5.6%;
+  font-size: 1.7rem;
+  font-family: 'Libre Baskerville', serif;
+  &__body {
+    margin-top: 8%;
+  }
+  .info-me {
+    display: flex;
+    margin-bottom: 3%;
+  }
+  .field-key {
+    font-weight: 700;
+  }
+  .field-value {
+    color: #54595d;
+  }
+  .first-name {
+    margin-left: 2.9%;
+  }
+  .last-name {
+    margin-left: 3%;
+  }
+
+  .email {
+    margin-left: 6%;
+  }
+
+  .github {
+    margin-left: 5%;
+  }
+
+  .skils {
+    margin-left: 7%;
+  }
+
+  .language {
+    margin-left: 3%;
+  }
+}
+
+@media (max-width: 996px) {
+  .about-me {
+    &__body {
+      margin-top: 30%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .about-me {
+    &__body {
+      margin-top: 60%;
+    }
+  }
+}

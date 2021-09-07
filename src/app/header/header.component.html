@@ -1,1 +1,19 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header__content">
+    <div class="header__logo">
+      <a href="/" class="routerLink">
+        <img src="/assets/img/logo.png" alt="logo">
+      </a>
+    </div>
+    <div class="header__burger" (click)="toggleMenu()"  >
+      <span></span>
+    </div>
+    <nav class="nav-header" >
+      <ul>
+        <li><a routerLink="/about">About Me</a></li>
+        <li><a routerLink="/location">Where I live</a> </li>
+        <li><a routerLink="/education">My Education</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
