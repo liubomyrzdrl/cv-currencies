@@ -1,0 +1,76 @@
+<div class="curr">
+  <app-header></app-header>
+  <div class="curr__block">
+    <div class="curr__params">
+      <div class="curr__params-content">
+        <div class="curr__title">Parameters</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select (selectionChange)="currenciesService.setChoozenCurrrency($event)">
+            <mat-option *ngFor="let curr of currencies" [value]="curr.cc">
+              {{curr.txt}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="params-curr__field">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="start"
+              (dateChange)="currenciesService.setStartDateValue($event)"
+              (dateInput)="currenciesService.setStartDateValue($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>pick</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="params-curr__field">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="picker2" [formControl]="end"
+              (dateChange)="currenciesService.setEndDateValue($event)"
+              (dateInput)="currenciesService.setEndDateValue($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker2">
+              <mat-icon matDatepickerToggleIcon>pick</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="curr__btn">
+          <button mat-flat-button color="primary" (click)="currenciesService.setChart()" (click)="handleSwitchChart()"
+            [disabled]="currenciesService.startDate === '' || currenciesService.endDate === ''">Chart
+          </button>
+          <button [disabled]="" mat-flat-button color="primary" (click)="currenciesService.setTable()"
+            (click)="handleSwitchTable()"
+            [disabled]="currenciesService.startDate==='' || currenciesService.endDate ==='' ">Table
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="curr__body">
+
+      <div echarts *ngIf="switchChart" [options]="currenciesService.chart" class="demo-chart"></div>
+      <div *ngIf="switchTable" class="curr__table">
+
+        <table mat-table [dataSource]="currenciesService.fetchedCurrencies" class="mat-elevation-z8">
+          <ng-container matColumnDef="exchangedate">
+            <th mat-header-cell *matHeaderCellDef> Exchangedate </th>
+            <td mat-cell *matCellDef="let element"> {{element.exchangedate}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="rate">
+            <th mat-header-cell *matHeaderCellDef> Rate UAH to : {{currenciesService.currency}}</th>
+            <td mat-cell *matCellDef="let element"> {{element.rate}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

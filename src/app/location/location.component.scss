@@ -19,7 +19,7 @@
     }
   }
   &__info-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: 'Libre Baskerville', serif;
     line-height: 2;
     span {
@@ -38,7 +38,7 @@
     font-family: 'Libre Baskerville', serif;
     font-weight: 900;
     font-size: 2rem;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
   }
   .article-location {
     width: 88%;
@@ -47,15 +47,37 @@
 
 @media (max-width: 996px) {
   .location {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+
     &__image {
       width: 100%;
     }
 
+    &__body {
+      margin-top: 9%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     &__info-text {
       font-size: 1rem;
     }
   }
   .content-location {
    flex-direction: column;
+  }
+}
+
+@media (max-width: 548px) {
+  .location{
+    .title-article {
+      font-size: 1.6rem;
+    }
+
+    &__image {
+      height: 150px;
+    }
   }
 }

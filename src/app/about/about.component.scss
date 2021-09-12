@@ -1,55 +1,115 @@
 .about-me {
-  margin-left: 5.6%;
-  font-size: 1.7rem;
-  font-family: 'Libre Baskerville', serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   &__body {
-    margin-top: 8%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__section {
+    flex: 0 1 50%
+  }
+
+  &__image {
+      width: 300px;
+      height: 300px;
+      border: 5px solid #28c95e;
+      padding: 2% 2%;
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
+  }
+
+  .picture-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/img/f3.jpeg);
+    background-position: center bottom;
+    background-size: cover;
   }
   .info-me {
     display: flex;
-    margin-bottom: 3%;
-  }
-  .field-key {
-    font-weight: 700;
-  }
-  .field-value {
-    color: #54595d;
-  }
-  .first-name {
-    margin-left: 2.9%;
-  }
-  .last-name {
-    margin-left: 3%;
-  }
+    justify-content: center;
+    align-items: center;
+    font-family: 'Urbanist', sans-serif;
 
-  .email {
-    margin-left: 6%;
-  }
+    &__contacts {
+      margin-top: 5%;
+    }
 
-  .github {
-    margin-left: 5%;
-  }
+    &__greeting {
+      display: flex;
+      font-size: 3rem;
+      margin-bottom: 8%;
+    }
 
-  .skils {
-    margin-left: 7%;
-  }
+    &__proff {
+      font-size: 1.7rem;
+      margin-bottom: 4%;
+    }
 
-  .language {
-    margin-left: 3%;
+    &__email {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+
+    &_icon {
+      margin-right: 3%;
+    }
+
+    .first-last-name {
+      margin-left: 12px;
+      font-weight: 800;
+    }
+    .info-field {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+    }
+
   }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 900px) {
   .about-me {
-    &__body {
-      margin-top: 30%;
+    &__section {
+      flex: 0 1 100%
+    }
+    &__image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .info-me {
+      &__greeting {
+        font-size: 2.5rem;
+      }
     }
   }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 570px) {
   .about-me {
-    &__body {
-      margin-top: 60%;
+    .info-me {
+      &__greeting {
+        font-size: 2rem;
+      }
+      &__proff {
+        font-size: 1.4rem;
+      }
+      .info-field {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+      }
+      hr {
+        width: 300px;
+      }
     }
   }
 }

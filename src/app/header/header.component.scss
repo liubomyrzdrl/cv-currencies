@@ -1,5 +1,6 @@
 .header {
   background-color: #0d47a1;
+  width: 100vw;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -101,18 +102,19 @@ nav {
       background-color: #0d47a1;
       padding: 70px 10px 20px 10px;
       transition: all 0.3s ease;
+      z-index: 3;
     }
     .header__menu.active {
       top: 0;
     }
 
     nav {
+      width: 50%;
       ul {
           flex-direction: column;
-          align-items: center;
-          margin-top: 400px;
+          transform: translate(22%, 100%);
           li {
-             margin-top: 2%;
+              margin-top: 2%;
               margin-bottom: 2%;
             a {
               font-size: 3rem;
@@ -120,6 +122,19 @@ nav {
           }
       }
     }
+}
+
+@media (max-width: 568px) {
+  nav {
+    width: 50%;
+    ul {
+        li {
+          a {
+            font-size: 2rem;
+          }
+        }
+    }
+  }
 }
 
 .active {
