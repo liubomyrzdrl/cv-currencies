@@ -8,7 +8,6 @@ import { CurrenciesComponent } from '../app/currencies/currencies.component';
 const routes: Routes = [
   { path: "", component: AboutComponent },
   { path: "curencies", component: CurrenciesComponent },
-  { path: "about", component: AboutComponent },
   { path: "location", component: LocationComponent },
   { path: "education", component: EducationComponent },
 ];
