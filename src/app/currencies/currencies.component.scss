@@ -26,8 +26,14 @@
   &__table {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
+  &__table-title {
+    margin-bottom: 2%;
+    font-size: 1.3rem;
+  }
   &__btn {
     display: flex;
     justify-content: space-between;

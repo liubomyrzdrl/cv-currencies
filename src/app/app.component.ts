@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss', './null.comonent.scss']
 })
 export class AppComponent {
-  title = 'rezume';
+  title = 'cv-currency';
 }

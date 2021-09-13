@@ -52,7 +52,7 @@
 
       <div echarts *ngIf="switchChart" [options]="chart" class="demo-chart"></div>
       <div *ngIf="switchTable" class="curr__table">
-
+        <div class="curr__table-title">Table UAH to {{currency}}</div>
         <table mat-table [dataSource]="fetchedCurrencies" class="mat-elevation-z8">
           <ng-container matColumnDef="exchangedate">
             <th mat-header-cell *matHeaderCellDef> Exchangedate </th>

@@ -104,6 +104,14 @@ export class CurrenciesComponent implements OnInit {
       legend: {
         data: [`UAH to ${this.currency}`],
         align: 'left',
+        x: 'center',
+        y: 'bottom',
+
+      },
+      title: {
+        text: `${this.currency} rates to UAH  `,
+        subtext: 'Source: National bank of Ukraine',
+        x: 'center'
       },
       xAxis: {
         align: 'right',
@@ -118,6 +126,7 @@ export class CurrenciesComponent implements OnInit {
         type: 'value',
         name: 'UAN',
         position: 'center',
+
       },
       series: [
         {
@@ -125,7 +134,6 @@ export class CurrenciesComponent implements OnInit {
             show:true,
             position:'bottom',
           },
-
           name: `UAH to ${this.currency}`,
           data: rate,
           type: 'line',
