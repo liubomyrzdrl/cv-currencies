@@ -100,6 +100,10 @@ export class CurrenciesComponent implements OnInit {
   buildChart() {
     let rate = this.fetchedCurrencies.map((item: any) => item.rate);
     let exchangedate = this.fetchedCurrencies.map((item: any) => item.exchangedate);
+    let forChartsArray = rate.sort();
+    let fixedNumber = Number((forChartsArray[forChartsArray.length - 1] - forChartsArray[0]).toFixed(2)) / 3;
+    let min =  (forChartsArray[0] - fixedNumber).toFixed(2);
+    let max = forChartsArray[forChartsArray - 1];
 
     this.chart = {
       legend: {
@@ -127,8 +131,8 @@ export class CurrenciesComponent implements OnInit {
         type: 'value',
         name: 'UAN',
         position: 'center',
-        min: Number( Math.floor(rate[0])),
-        max: Number(Math.ceil(rate[rate.length - 1])) ,
+        min,
+        max,
 
       },
       series: [

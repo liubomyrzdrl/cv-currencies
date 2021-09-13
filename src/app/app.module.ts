@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { Page404Component } from './page404/page404.component';
 
 
 
@@ -35,7 +36,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     AboutComponent,
     LocationComponent,
     EducationComponent,
-    CurrenciesComponent
+    CurrenciesComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
