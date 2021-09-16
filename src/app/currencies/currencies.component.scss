@@ -6,6 +6,9 @@
     flex: 1 1 auto;
     margin-top: 3%;
   }
+  &__loader {
+    text-align: center;
+  }
   &__params-content {
     display: flex;
     position: relative;

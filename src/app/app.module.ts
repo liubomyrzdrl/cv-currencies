@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { LocationComponent } from './location/location.component';
 import { EducationComponent } from './education/education.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CurrenciesComponent } from './currencies/currencies.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -23,6 +23,9 @@ import { MatTableModule } from '@angular/material/table';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { Page404Component } from './page404/page404.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { InterceptorService } from './loader/interceptor.service';
 
 
 
@@ -54,12 +57,18 @@ import { Page404Component } from './page404/page404.component';
     ReactiveFormsModule,
     MatListModule,
     MatTableModule,
+    MatProgressSpinnerModule,
+    MatProgressSpinnerModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
 
   ],
-  providers: [CurrenciesService],
+  providers: [
+    CurrenciesService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurrenciesService } from './currencies.service';
 import { MatSelectChange } from '@angular/material/select';
 import { FormControl } from '@angular/forms';
+import { LoaderService } from '../loader/loader.service';
 
 export interface Currency {
      r030: string,
@@ -33,7 +34,10 @@ export class CurrenciesComponent implements OnInit {
   switchChart:  boolean | any;
   displayedColumns: string[] = ['exchangedate', 'rate'];
 
-  constructor(private currenciesService: CurrenciesService)  {}
+  constructor(
+    private currenciesService: CurrenciesService,
+    public loaderService: LoaderService
+  )  {}
 
   ngOnInit(): void {
       this.currenciesService.getCurrenciesBeginValues()

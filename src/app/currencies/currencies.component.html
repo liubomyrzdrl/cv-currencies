@@ -49,6 +49,9 @@
       </div>
     </div>
     <div class="curr__body">
+      <div *ngIf="loaderService.isLoading | async" class="curr__loader">
+        <mat-spinner style="margin:0 auto;"></mat-spinner>
+      </div>
 
       <div echarts *ngIf="switchChart" [options]="chart" class="demo-chart"></div>
       <div *ngIf="switchTable" class="curr__table">
